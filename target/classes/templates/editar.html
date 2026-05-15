@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar Notícia</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+input, textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 300px;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Editar notícia</h2>
+
+<form th:action="@{/atualizarNoticia}" method="post">
+
+    <input type="hidden" name="id" th:value="${noticia.id}">
+
+
+    Autor:
+    <input type="text" name="nomeAutor" th:value="${noticia.nomeAutor}">
+
+    Email:
+    <input type="text" name="emailAutor" th:value="${noticia.emailAutor}">
+
+    Título:
+    <input type="text" name="titulo" th:value="${noticia.titulo}">
+
+    Assunto:
+    <input type="text" name="assunto" th:value="${noticia.assunto}">
+
+    Conteúdo:
+    <textarea name="conteudo" th:text="${noticia.conteudo}"></textarea>
+
+    <button type="submit">Salvar</button>
+
+</form>
+
+<br>
+
+<a href="/">Voltar</a>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+services:
+
+  mongo:
+    image: mongo:6.0
+
+    container_name: mongo-db
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongo-data:/data/db
+
+    networks:
+      - minha-rede
+
+    restart: unless-stopped
+
+
+  myapp:
+    image: viniciusguerra/agencianoticias:latest
+
+    container_name: myapp
+
+    ports:
+      - "9090:9090"
+
+    depends_on:
+      - mongo
+
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/teste
+
+    networks:
+      - minha-rede
+
+    restart: unless-stopped
+
+
+volumes:
+  mongo-data:
+
+
+networks:
+  minha-rede:
+    driver: bridge

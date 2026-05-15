@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Listagem de Autores</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    padding: 30px;
+    background-color: #f5f5f5;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    background: white;
+}
+
+th{
+    background-color: royalblue;
+    color: white;
+    padding: 12px;
+}
+
+td{
+    border: 1px solid #dddddd;
+    padding: 12px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: green;
+}
+
+.voltar{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Listagem de Autores</h1>
+
+<table>
+
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Data de Nascimento</th>
+        <th>Ações</th>
+    </tr>
+
+    <tr th:each="autor : ${autores}">
+
+        <td th:text="${autor.nome}"></td>
+
+        <td th:text="${autor.email}"></td>
+
+        <td th:text="${autor.dataNascimento}"></td>
+
+        <td>
+
+            <a th:href="@{/editarAutor(email=${autor.email})}">
+                Editar
+            </a>
+
+            |
+
+            <a th:href="@{/removerAutor(email=${autor.email})}">
+                Excluir
+            </a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<div class="voltar">
+    <a href="/">⬅ Voltar</a>
+</div>
+
+</body>
+
+</html>

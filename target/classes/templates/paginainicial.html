@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Agência de Notícias</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    padding: 20px;
+}
+
+h1 {
+    color: #2e7d32;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.botao {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a.botao:hover {
+    background-color: #2e7d32;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #e8f5e9;
+}
+
+td a {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Agência de Notícias</h1>
+
+<a href="/cadastrarAutor" class="botao">
+    Cadastrar Autor
+</a>
+
+<a href="/cadastrarNoticia" class="botao">
+    Cadastrar Notícia
+</a>
+
+<a href="/listarAutores" class="botao">
+    Ver Autores
+</a>
+
+<h2>Notícias cadastradas</h2>
+
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Autor</th>
+        <th>Título</th>
+        <th>Assunto</th>
+        <th>Conteúdo</th>
+        <th>Ações</th>
+    </tr>
+
+    <tr th:each="n : ${noticias}">
+
+        <td th:text="${n.id}"></td>
+
+        <td th:text="${n.nomeAutor}"></td>
+
+        <td th:text="${n.titulo}"></td>
+
+        <td th:text="${n.assunto}"></td>
+
+        <td th:text="${n.conteudo}"></td>
+
+        <td>
+
+            <a th:href="@{/detalheNoticia(idDocumento=${n.id})}">
+                Detalhar
+            </a>
+
+            |
+
+            <a th:href="@{/editarNoticia(idDocumento=${n.id})}">
+                Editar
+            </a>
+
+            |
+
+            <a th:href="@{/removerNoticia(idDocumento=${n.id})}">
+                Excluir
+            </a>
+
+        </td>
+
+    </tr>
+
+    <tr th:if="${#lists.isEmpty(noticias)}">
+
+        <td colspan="6">
+            Nenhuma notícia cadastrada
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

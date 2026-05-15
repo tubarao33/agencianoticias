@@ -1,0 +1,8 @@
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/Main.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/controle/AutorController.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/modelo/Autor.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/modelo/Noticia.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/persistencia/AutorDAO.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/persistencia/BancoDados.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/persistencia/MongoAutorDAO.java
+/Users/viniciustubarao/eclipse-workspace/ agencianoticias/src/main/java/br/edu/utfpr/agenciadenoticias/persistencia/MySQLAutorDAO.java

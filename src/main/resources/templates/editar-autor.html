@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Editar Autor</title>
+
+<style>
+
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Editar Autor</h2>
+
+<form th:action="@{/atualizarAutor}" method="post">
+
+    Nome:
+    <input type="text"
+           name="nome"
+           th:value="${autor.nome}">
+
+    Email:
+    <input type="text"
+           name="email"
+           th:value="${autor.email}"
+           readonly>
+
+    Data de Nascimento:
+    <input type="text"
+           name="dataNascimento"
+           th:value="${autor.dataNascimento}">
+
+    <button type="submit">
+        Salvar
+    </button>
+
+</form>
+
+<br>
+
+<a href="/listarAutores">
+    Voltar
+</a>
+
+</body>
+
+</html>

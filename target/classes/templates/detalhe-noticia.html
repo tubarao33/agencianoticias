@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalhe da Notícia</title>
+</head>
+<body>
+
+<h1 th:text="${noticia.titulo}"></h1>
+
+<p><b>Autor:</b> <span th:text="${noticia.nomeAutor}"></span></p>
+
+<p><b>Email:</b> <span th:text="${noticia.emailAutor}"></span></p>
+
+<p><b>Assunto:</b> <span th:text="${noticia.assunto}"></span></p>
+
+<p><b>Conteúdo:</b></p>
+<p th:text="${noticia.conteudo}"></p>
+
+<br>
+
+<a href="/">Voltar</a>
+
+</body>
+</html>
