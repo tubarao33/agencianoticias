@@ -18,7 +18,7 @@ services:
 
 
   myapp:
-    image: viniciusguerra/agencianoticias:latest
+    image: viniciusguerraguerra/agencianoticias:latest
 
     container_name: myapp
 
